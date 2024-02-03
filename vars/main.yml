@@ -1,0 +1,9 @@
+servicos:
+  - epel-release
+  - vim
+  - nano
+  - net-tools
+  - python3
+  - htop
+  - zip
+  - zabbix-agent

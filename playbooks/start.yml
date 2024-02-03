@@ -1,0 +1,12 @@
+---
+- name: Instalações iniciais do servidor
+  hosts: vms
+
+  user: root
+  become: yes
+
+  vars_files:
+    - ../vars/main.yml
+  
+  roles:
+    - ../roles/main.yml

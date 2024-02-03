@@ -1,0 +1,16 @@
+- name: Upgrade sistema
+  ignore_errors: yes
+  shell: yum update -y
+  
+- name: Upgrade de todos os pacotes
+  ignore_errors: yes
+  yum:
+    name: '*'
+    state: latest
+
+- name: instalar servicos
+  ignore_errors: yes
+  yum:
+    name: "{{item}}"
+    state: present
+  with_items:"{{servicos}}"
