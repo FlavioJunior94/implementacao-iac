@@ -19,6 +19,14 @@
     state: present
   with_items: "{{servicos}}"
 
+
+- name: Adicionar usuário
+    user:
+      name: "{{ item.nome }}"
+      password: "{{ senha | password_hash('sha512') }}"
+      state: present
+    with_items: "{{ usuarios }}"
+
 - name: baixar repositorio Docker
   get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo

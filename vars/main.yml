@@ -7,3 +7,10 @@ servicos:
   - htop
   - zip
   - zabbix-agent
+
+senha: "mudar"
+
+usuarios:
+  - usuario1
+  - usuario2
+  - usuario3
