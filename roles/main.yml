@@ -1,6 +1,10 @@
-- name: Upgrade sistema
+- name: Upgrade sistema YUM
   ignore_errors: yes
   shell: yum update -y
+
+- name: Upgrade sistema DNF
+  ignore_errors: yes
+  shell: dnf update -y
   
 - name: Upgrade de todos os pacotes
   ignore_errors: yes
@@ -13,4 +17,27 @@
   yum:
     name: "{{item}}"
     state: present
-  with_items:"{{servicos}}"
+  with_items: "{{servicos}}"
+
+- name: baixar repositorio Docker
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /root/
+
+- name: Instalar Docker
+  shell: dnf install docker-ce -y
+
+- name: Instalar curl
+  shell: dnf install -y curl
+
+- name: Instalar Docker Composer
+  shell: curl -L https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+- name: Mudando Permissão Docker-compose
+  shell: chmod +x /usr/local/bin/docker-compose
+
+- name: Ativar Docker durante inicialização.
+  shell: systemctl enable Docker
+
+- name: Inicialiar Docker
+  shell: systemctl start Docker
