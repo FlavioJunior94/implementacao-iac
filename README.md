@@ -5,4 +5,3 @@ Através de playbooks e papéis cuidadosamente definidos, ele automatiza tarefas
 instalação de pacotes essenciais como htop, net-tools, zabbix-agent, docker e docker-compose, além de configuração de
 serviços básicos como zabbix-agent e docker. Essa abordagem proporciona uma estrutura modular e organizada, permitindo
 uma fácil adaptação às necessidades específicas do ambiente e simplificando o processo de provisionamento e manutenção.
-teste
