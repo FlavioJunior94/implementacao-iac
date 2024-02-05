@@ -35,7 +35,7 @@
 - name: Instalar Docker
   shell: dnf install docker-ce -y
 
-- name: Instalar curl
+- name: Instalar curlcv
   shell: dnf install -y curl
 
 - name: Instalar Docker Composer
