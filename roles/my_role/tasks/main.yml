@@ -1,16 +1,20 @@
-- name: Upgrade sistema YUM
+- name: Update sistema
   ignore_errors: yes
   shell: yum update -y
-
-- name: Upgrade sistema DNF
-  ignore_errors: yes
-  shell: dnf update -y
   
 - name: Upgrade de todos os pacotes
   ignore_errors: yes
   yum:
     name: '*'
     state: latest
+
+- name: Instalar epel-release
+  ignore_errors: yes
+  command: yum install epel-release -y
+
+- name: Instalar python-apt
+  ignore_errors: yes
+  command: yum install python-apt -y
 
 - name: instalar servicos
   ignore_errors: yes
@@ -22,7 +26,7 @@
 
 - name: Adicionar usuário
   user:
-    name: "{{ item.nome }}"
+    name: "{{ item }}"
     password: "{{ senha | password_hash('sha512') }}"
     state: present
   with_items: "{{ usuarios }}"
@@ -33,10 +37,10 @@
     dest: /root/
 
 - name: Instalar Docker
-  shell: dnf install docker-ce -y
+  shell: yum install docker -y
 
 - name: Instalar curlcv
-  shell: dnf install -y curl
+  shell: yum install -y curl
 
 - name: Instalar Docker Composer
   shell: curl -L https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
@@ -47,5 +51,5 @@
 - name: Ativar Docker durante inicialização.
   shell: systemctl enable Docker
 
-- name: Inicialiar Docker
+- name: Inicializar Docker
   shell: systemctl start Docker
