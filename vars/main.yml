@@ -1,5 +1,8 @@
 servicos:
-  - epel-release
+  - vi
+  - python3
+  - ncdu
+  - telnet
   - vim
   - nano
   - net-tools

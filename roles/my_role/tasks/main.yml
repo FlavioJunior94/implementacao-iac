@@ -12,16 +12,11 @@
   ignore_errors: yes
   command: yum install epel-release -y
 
-- name: Instalar python-apt
-  ignore_errors: yes
-  command: yum install python-apt -y
-
 - name: instalar servicos
   ignore_errors: yes
   yum:
-    name: "{{item}}"
+    name: "{{servicos}}"
     state: present
-  with_items: "{{servicos}}"
 
 
 - name: Adicionar usuário
@@ -49,7 +44,7 @@
   shell: chmod +x /usr/local/bin/docker-compose
 
 - name: Ativar Docker durante inicialização.
-  shell: systemctl enable Docker
+  shell: systemctl enable docker
 
 - name: Inicializar Docker
-  shell: systemctl start Docker
+  shell: systemctl start docker
