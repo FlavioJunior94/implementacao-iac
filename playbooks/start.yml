@@ -9,4 +9,4 @@
     - ../vars/main.yml
   
   roles:
-    - ../roles/main.yml
+    - ../roles/my_role/
