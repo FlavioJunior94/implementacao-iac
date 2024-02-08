@@ -1,0 +1,6 @@
+- name: Adicionar usuário
+  user:
+    name: "{{ item }}"
+    password: "{{ senha | password_hash('sha512') }}"
+    state: present
+  with_items: "{{ usuarios }}"

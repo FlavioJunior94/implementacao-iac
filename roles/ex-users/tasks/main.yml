@@ -1,0 +1,5 @@
+- name: Remover usuario
+  user:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ usuarios }}"

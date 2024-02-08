@@ -11,9 +11,10 @@ servicos:
   - zip
   - zabbix-agent
 
-senha: "mudar"
+senha: "Flavio@321"
 
 usuarios:
   - usuario1
-  - usuario2
   - usuario3
+  - usuario2
+  - Claudia
