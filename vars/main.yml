@@ -22,3 +22,7 @@ usuarios:
 
 url:
   - { old: "URL", new: "meusite.com.br" }
+  - { old: "INDEX", new: "ex002.html" }
+
+
+  
