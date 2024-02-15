@@ -16,10 +16,9 @@ servicos:
 senha: "Flavio@321"
 
 usuarios:
-  - usuario1
-  - usuario3
-  - usuario2
-  - Claudia
+  - Flavio
+  - Junior
+  - Iara
 
 url:
   - { old: "URL", new: "meusite.com.br" }
