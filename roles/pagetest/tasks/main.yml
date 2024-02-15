@@ -5,7 +5,7 @@
 
 - name: copiar html
   copy:
-    src: ../../files/ex002.html
+    src: ../../../files/ex002.html
     dest: /var/www/html/
     owner: root
     group: root
