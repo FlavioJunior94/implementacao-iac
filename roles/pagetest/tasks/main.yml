@@ -3,9 +3,17 @@
     name: nginx
     state: present
 
+- name: configuração nginx
+  copy:
+    src: ../../../files/meu_site.conf
+    dest: /etc/nginx/conf.d/
+    owner: root
+    group: root
+    mode: 0775
+    
 - name: ativar nginx
   shell: systemctl start nginx
-  
+
 - name: copiar html
   copy:
     src: ../../../files/ex002.html
