@@ -1,0 +1,12 @@
+- name: instalar nginx
+  yum:
+    name: nginx
+    state: present
+
+- name: copiar html
+  copy:
+    src: ../../files/ex002.html
+    dest: /var/www/html/
+    owner: root
+    group: root
+    mode: 0775
