@@ -10,6 +10,11 @@
     owner: root
     group: root
     mode: 0775
+
+- name: mudar variavel no conf do nginx.
+  command: sed -i 's/{{ item.old }}/{{ item.new }}/g' /etc/nginx/conf.d/meu_site.conf
+  with_items: "{{ url }}"
+
     
 - name: ativar nginx
   shell: systemctl start nginx

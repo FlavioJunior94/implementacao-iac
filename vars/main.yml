@@ -21,4 +21,4 @@ usuarios:
   - Claudia
 
 url:
-  - meusite.com
+  - { old: "URL", new: "meusite.com.br" }
