@@ -1,6 +1,7 @@
 servicos:
   - vi
   - yum-utils
+  - wget
   - python3
   - ncdu
   - telnet
