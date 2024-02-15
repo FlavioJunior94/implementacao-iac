@@ -12,7 +12,10 @@
     mode: 0775
 
 - name: mudar variavel no conf do nginx.
-  command: sed -i 's/{{ item.old }}/{{ item.new }}/g' /etc/nginx/conf.d/meu_site.conf
+  replace:
+    path: /etc/nginx/conf.d/meu_site.conf
+    regexp: "{{ item.old }}"
+    replace: "{{ item.new }}"
   with_items: "{{ url }}"
 
     
