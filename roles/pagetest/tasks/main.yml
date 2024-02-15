@@ -3,6 +3,9 @@
     name: nginx
     state: present
 
+- name: ativar nginx
+  shell: systemctl start nginx
+  
 - name: copiar html
   copy:
     src: ../../../files/ex002.html
