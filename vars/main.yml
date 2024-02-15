@@ -1,5 +1,6 @@
 servicos:
   - vi
+  - yum-utils
   - python3
   - ncdu
   - telnet
