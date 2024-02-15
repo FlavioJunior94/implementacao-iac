@@ -9,3 +9,4 @@ uma fácil adaptação às necessidades específicas do ambiente e simplificando
 ## Novidades
 
 - playbooks separados para inserir e excluir usuarios, do sistema.
+- Implementa uma pagina Web, instalando o Nginx e copiando o html com origem na pasta Files
