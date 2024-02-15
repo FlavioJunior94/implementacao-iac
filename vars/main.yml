@@ -16,9 +16,10 @@ servicos:
 senha: "Flavio@321"
 
 usuarios:
-  - Flavio
-  - Junior
-  - Iara
+  - Donatelo
+  - Michellangelo
+  - Leonardo
+  - Rafael
 
 url:
   - { old: "URL", new: "meusite.com.br" }
