@@ -22,7 +22,7 @@
 - name: baixar repositorio Docker
   get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo 
-    dest: /root/
+    dest: /etc/yum.repos.d/
 
 - name: Instalar Docker
   shell: yum install docker-ce -y
