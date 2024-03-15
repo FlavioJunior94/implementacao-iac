@@ -24,9 +24,6 @@
     url: https://download.docker.com/linux/centos/docker-ce.repo 
     dest: /etc/yum.repos.d/
 
-- name: mover repositorio
-  ignore_errors: yes
-  shell: mv /root/docker-ce.repo /etc/yum.repos.d/
 
 - name: Instalar curl
   shell: yum install -y curl
