@@ -24,11 +24,8 @@
     url: https://download.docker.com/linux/centos/docker-ce.repo 
     dest: /etc/yum.repos.d/
 
-- name: Mover Repositorio
-  shell: mv /root/docker-ce.repo /etc/yum.repos.d/
-  ignore_errors: yes
 
-- name: Instalar curlcv
+- name: Instalar curl
   shell: yum install -y curl
 
 - name: Instalar Docker Composer
