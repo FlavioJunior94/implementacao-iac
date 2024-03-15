@@ -24,8 +24,14 @@
     url: https://download.docker.com/linux/centos/docker-ce.repo 
     dest: /etc/yum.repos.d/
 
+- name: Instalar Docker
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo 
+    dest: /etc/yum.repos.d/
+- name: Instalar Docker
+  shell: yum install docker-ce -y
 
-- name: Instalar curl
+- name: Instalar curlcv
   shell: yum install -y curl
 
 - name: Instalar Docker Composer
