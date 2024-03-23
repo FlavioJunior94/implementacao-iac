@@ -18,7 +18,8 @@
     name: "{{servicos}}"
     state: present
 
-
+- name: "configuracao ntp Sao Paulo"
+  shell: "timedatectl set-timezone America/Sao_Paulo"
 - name: baixar repositorio Docker
   get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo 

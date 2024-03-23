@@ -1,4 +1,5 @@
 servicos:
+  - ntp
   - vi
   - yum-utils
   - wget
