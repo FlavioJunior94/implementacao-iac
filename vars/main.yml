@@ -1,6 +1,7 @@
 servicos:
   - ntp
   - vi
+  - stress
   - yum-utils
   - wget
   - python3
