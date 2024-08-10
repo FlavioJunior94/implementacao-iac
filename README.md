@@ -1,4 +1,4 @@
-# IMPLEMENTAÇÃO INICIAL AMBIENTE LINUX
+# IAC AMBIENTE LINUX
 
 O projeto em Ansible oferece uma solução automatizada para configurar ambientes de forma rápida e eficiente.
 Através de playbooks e papéis cuidadosamente definidos, ele automatiza tarefas como atualização do sistema operacional,
