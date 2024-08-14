@@ -9,9 +9,17 @@
     state: latest
 
 
-- name: Instalar oracle-epel-release
-  ignore_errors: yes
-  command: dnf install oracle-epel-release -y
+- name: Adicionar repositório EPEL para Oracle Linux
+  get_url:
+    url: "https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm"
+    dest: /tmp/epel-release-7-14.noarch.rpm
+  become: yes
+
+- name: Instalar pacote EPEL
+  yum:
+    name: /tmp/epel-release-7-14.noarch.rpm
+    state: present
+  become: yes
 
 - name: Instalar serviços
   ignore_errors: yes
