@@ -1,0 +1,57 @@
+- name: Atualizar o sistema
+  ignore_errors: yes
+  shell: dnf update -y
+  
+- name: Atualizar todos os pacotes
+  ignore_errors: yes
+  dnf:
+    name: '*'
+    state: latest
+
+
+- name: Instalar oracle-epel-release
+  ignore_errors: yes
+  command: dnf install oracle-epel-release -y
+
+- name: Instalar serviços
+  ignore_errors: yes
+  dnf:
+    name: "{{ servicos }}"
+    state: present
+
+- name: "Configurar fuso horário para São Paulo"
+  timezone:
+    name: America/Sao_Paulo
+
+- name: Instalar Docker
+  dnf:
+    name: docker
+    state: present
+  become: yes
+
+- name: Iniciar e habilitar o serviço Docker
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Adicionar o usuário ao grupo docker
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+  become: yes
+
+- name: Instalar Docker Compose
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x'
+  become: yes
+
+- name: Verificar a instalação do Docker Compose
+  command: docker-compose --version
+  register: docker_compose_version
+  failed_when: docker_compose_version.rc != 0
+  become: yes

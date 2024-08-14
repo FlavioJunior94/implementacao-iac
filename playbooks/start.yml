@@ -9,5 +9,5 @@
     - ../vars/main.yml
   
   roles:
-    - ../roles/centos_role/
+    - ../roles/os/
     - ../roles/users/

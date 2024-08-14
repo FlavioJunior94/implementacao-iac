@@ -1,0 +1,15 @@
+- name: Instalação CentOS
+  include: centos.yml
+  when: ansible_facts['distribution'] == "CentOS"
+
+- name: Instalação Oracle Linux
+  include: oracle.yml
+  when: ansible_facts['distribution'] == "OracleLinux"
+
+#- name: Inclui redhat.yml para Red Hat
+#  include: redhat.yml
+#  when: ansible_facts['distribution'] == "RedHat"
+
+#- name: Inclui debian.yml para Debian
+#  include: debian.yml
+#  when: ansible_facts['os_family'] == "Debian"

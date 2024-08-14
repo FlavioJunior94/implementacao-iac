@@ -1,0 +1,47 @@
+
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+#####################
+
+
+- name: baixar repositorio Docker
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo 
+    dest: /etc/yum.repos.d/
+
+- name: Instalar Docker
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo 
+    dest: /etc/yum.repos.d/
+- name: Instalar Docker
+  shell: yum install docker-ce -y
+
+- name: Instalar curlcv
+  shell: yum install -y curl
+
+- name: Instalar Docker Composer
+  shell: curl -L https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+- name: Mudando Permissão Docker-compose
+  shell: chmod +x /usr/local/bin/docker-compose
+
+- name: Ativar Docker durante inicialização.
+  shell: systemctl enable docker
+
+- name: Inicializar Docker
+  shell: systemctl start docker
