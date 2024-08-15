@@ -23,12 +23,14 @@
 
 
 - name: Adicionar repositório EPEL usando yum
+  ignore_errors: yes
   yum:
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     state: present
   become: yes
 
 - name: Instalar o repositório EPEL
+  ignore_errors: yes
   yum:
     name: "/tmp/epel-release-latest-7.noarch.rpm"
     state: present
