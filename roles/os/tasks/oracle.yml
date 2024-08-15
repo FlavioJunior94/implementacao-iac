@@ -31,11 +31,6 @@
 
 
 
-- name: Habilitar e iniciar o serviço Zabbix Agent
-  ansible.builtin.systemd:
-    name: zabbix-agent
-    enabled: yes
-
 
 - name: "Configurar fuso horário para São Paulo"
   timezone:
