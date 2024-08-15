@@ -1,24 +1,27 @@
+- name: Update sistema
+  ignore_errors: yes
+  shell: yum update -y
+  
+- name: Upgrade de todos os pacotes
+  ignore_errors: yes
+  yum:
+    name: '*'
+    state: latest
 
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
-#####################
+- name: Instalar epel-release
+  ignore_errors: yes
+  command: yum install epel-release -y
 
+- name: instalar servicos
+  ignore_errors: yes
+  yum:
+    name: "{{servicos}}"
+    state: present
 
+- name: "Configurar fuso horário para São Paulo"
+  timezone:
+    name: America/Sao_Paulo
+    
 - name: baixar repositorio Docker
   get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo 

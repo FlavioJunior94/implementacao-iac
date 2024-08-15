@@ -1,4 +1,4 @@
-- name: Atualizar o sistema
+- name: Atualizar o sistema ORACLE
   ignore_errors: yes
   shell: dnf update -y
   
