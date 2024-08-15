@@ -15,7 +15,7 @@ servicos:
   - zip
   - zabbix-agent
 
-servicos-oracle:
+servicos_oracle:
   - chrony
   - stress
   - yum-utils
