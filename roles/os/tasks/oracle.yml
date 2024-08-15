@@ -1,4 +1,17 @@
-- name: Atualizar o sistema ORACLE
+- name: Atualizar o sistema ORACLE YUM
+  yum:
+    name: '*'
+    state: latest
+  become: yes
+
+  - name: Instalar o dnf (se necessário)
+  yum:
+    name: dnf
+    state: present
+  become: yes
+
+
+- name: Atualizar o sistema ORACLE DNF
   ignore_errors: yes
   shell: dnf update -y
   
