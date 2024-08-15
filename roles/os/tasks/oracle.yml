@@ -22,15 +22,6 @@
     state: latest
 
 
-- name: Baixar o EPEL Release
-  get_url:
-    url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    dest: /tmp/epel-release-latest-7.noarch.rpm
-
-- name: Instalar o EPEL Release
-  yum:
-    name: /tmp/epel-release-latest-7.noarch.rpm
-    state: present
 
 - name: Instalar serviços
   ignore_errors: yes
