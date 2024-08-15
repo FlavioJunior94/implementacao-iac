@@ -24,13 +24,13 @@
 
 - name: Adicionar repositório EPEL para Oracle Linux
   get_url:
-    url: "https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm"
-    dest: /tmp/epel-release-7-14.noarch.rpm
+    url: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+    dest: "/tmp/epel-release-latest-7.noarch.rpm"
   become: yes
 
-- name: Instalar pacote EPEL
+- name: Instalar o repositório EPEL
   yum:
-    name: /tmp/epel-release-7-14.noarch.rpm
+    name: "/tmp/epel-release-latest-7.noarch.rpm"
     state: present
   become: yes
 
